@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --nila-bg: #f0f4fb;
+  --nila-bg-chat: linear-gradient(180deg, #eef3fc 0%, #f8fafc 55%, #ffffff 100%);
+  --nila-surface: #ffffff;
+  --nila-primary: #1d4ed8;
+  --nila-primary-hover: #1e40af;
+  --nila-accent: #0891b2;
+  --nila-text: #1e293b;
+  --nila-text-muted: #64748b;
+  --nila-border: #e2e8f0;
+  --nila-chip: #ffffff;
+  --nila-chip-active-bg: #eff6ff;
+  --nila-chip-active-border: #93c5fd;
+  --nila-chip-active-text: #1d4ed8;
+  --nila-user-bubble: #1d4ed8;
+  --nila-shadow: 0 4px 24px rgba(30, 64, 175, 0.08);
+  --nila-avatar-gradient: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--nila-bg);
+  color: var(--nila-text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@keyframes nila-float {
+  0%,
+  100% {
+    transform: translateY(0) rotateY(-6deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(6deg);
+  }
+}
+
+@keyframes nila-speak {
+  0%,
+  100% {
+    transform: translateX(-50%) scaleY(1);
+  }
+  50% {
+    transform: translateX(-50%) scaleY(1.4);
+  }
+}
+
+.nila-avatar-float {
+  animation: nila-float 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.nila-avatar-speak {
+  animation: nila-speak 0.35s ease-in-out infinite;
+}
+
+.nila-chat-bg {
+  background: var(--nila-bg-chat);
+}
+
+.nila-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.nila-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
